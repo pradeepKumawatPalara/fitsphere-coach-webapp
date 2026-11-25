@@ -33,7 +33,7 @@ Related docs: `CLAUDE.md` (rules for Claude Code), `docs/FITSPHERE_COACH_WEBAPP.
 | [D-19](adr/ADR-019-mvp-scope.md) | MVP scope and what's left out | ✅ Accepted | Nov 2026 |
 | [D-20](adr/ADR-020-roles-admin-and-coach.md) | Roles: Admin and Coach | 🟡 Proposed | Nov 2026 |
 | [D-21](adr/ADR-021-calendar-inside-each-client.md) | Calendar lives inside each client (not a top-level tab) | 🟡 Proposed | Nov 2026 |
-| [D-22](adr/ADR-022-auth-provider.md) | Auth provider (same as the Android app) | ❓ Open | — |
+| [D-22](adr/ADR-022-auth-provider.md) | Auth provider: Supabase Auth, same as the Android app | 🟡 Proposed | Nov 2026 |
 
 ---
 
@@ -303,9 +303,9 @@ Google Cloud budget alerts are set up from day one.
 ---
 
 ## D-22 · Auth provider
-**Status:** ❓ Open
+**Status:** 🟡 Proposed (Supabase Auth confirmed as the Android app's provider; see [ADR-022](adr/ADR-022-auth-provider.md))
 
-**Options:** Supabase Auth, or Firebase Auth (via Supabase third-party auth) — whichever the Android app uses today.
+**Proposal:** Supabase Auth, the same provider as the Android app. Options considered: Firebase Auth via Supabase third-party auth, another managed provider (custom auth rejected).
 
 **Rule regardless of choice:** the API verifies the JWT on every request and loads the user's `gym_id` and role.
 
